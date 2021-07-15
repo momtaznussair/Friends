@@ -1,5 +1,5 @@
 <?php
-require_once('/var/www/html/friends/models/database.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/friends/models/database.php');
 
 class LoginModel{
 
@@ -18,10 +18,10 @@ class LoginModel{
         $this->db->bind(':email', $this->email);
         $result = $this->db->resultset();
         if (isset($result[0]['password'])){
-            if ($result[0]['password'] == $this->passWord)
-            {
+
+            if(password_verify($this->passWord, $result[0]['password'])) {
                 return $result[0];
-            }
+            } 
         }
         return false;
     }

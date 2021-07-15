@@ -71,16 +71,24 @@ if(strlen($_FILES["image"]["name"]) !== 0){
 // registration
 if (count($_SESSION['errors']) == 0)
 {
-
-    $uniqueName = uniqid();
-    $imagePath = "/friends/assets/images/users_pics/".$uniqueName.".".$file_ext;
-    $imageDestination = "/var/www/html/friends/assets/images/users_pics/".$uniqueName.".".$file_ext;
-    if(!move_uploaded_file($file_tmp,$imageDestination))
-    {
-        $_SESSION['errors']["imageError"] = "Sorry Couldn't save your image";
+    if (strlen($_FILES["image"]["name"]) !== 0){
+        
+        $uniqueName = uniqid();
+        $imagePath = "/friends/assets/images/users_pics/".$uniqueName.".".$file_ext;
+        $imageDestination = $_SERVER['DOCUMENT_ROOT']."/friends/assets/images/users_pics/".$uniqueName.".".$file_ext;
+        if(!move_uploaded_file($file_tmp,$imageDestination))
+        {
+            $_SESSION['errors']["imageError"] = "Sorry Couldn't save your image";
+        }
+    }else{
+        $imagePath = null;
     }
+    
 
-    $registrator = new RegisterModel($_SESSION["username"], $_SESSION['password'], $_SESSION['email'], $_SESSION["gender"], $imagePath);
+    // hashing password
+    $password = $_SESSION["password"];
+    $hash_variable_salt = password_hash($password, PASSWORD_DEFAULT, array('cost' => 9));
+    $registrator = new RegisterModel($_SESSION["username"], $hash_variable_salt, $_SESSION['email'], $_SESSION["gender"], $imagePath);
 
     if (!$registrator->emailAreadyExists()) //check if email is bound to another account
     {
@@ -89,7 +97,7 @@ if (count($_SESSION['errors']) == 0)
     {
         session_destroy();
         session_start();
-        $_SESSION["userAdded"] = "Welcome ". $_POST['username']. " your account is ready, please Log";
+        $_SESSION["userAdded"] = "Welcome ". ucfirst($_POST['username']). " your account is ready, please Log";
         header("location:/friends/views/users/login.php");
     }
     }else

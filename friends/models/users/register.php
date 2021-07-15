@@ -1,5 +1,5 @@
 <?php
-require_once('/var/www/html/friends/models/database.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/friends/models/database.php');
 
 class RegisterModel{
 
