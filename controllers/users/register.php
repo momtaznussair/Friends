@@ -5,6 +5,8 @@ require "../../config.php";
 session_start();
 
 $_SESSION["username"] = $_POST["username"];
+$_SESSION["id"] = $_POST["id"];//added
+$_SESSION["image_link"] = $_POST["image_link"];//added 
 $_SESSION["password"] = $_POST["password"];
 $_SESSION["confirmpass"] = $_POST["confirmpass"];
 $_SESSION["email"] = $_POST["email"];
