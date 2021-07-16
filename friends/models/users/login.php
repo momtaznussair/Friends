@@ -1,5 +1,8 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/friends/models/database.php');
+// include congig file
+require_once("../../config.php");
+
+require_once(DOCUMENT_ROOT.'/friends/models/database.php');
 
 class LoginModel{
 

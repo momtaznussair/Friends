@@ -1,5 +1,7 @@
 <?php
 require "../../models/users/register.php";
+require "../../config.php";
+
 session_start();
 
 $_SESSION["username"] = $_POST["username"];
@@ -8,7 +10,7 @@ $_SESSION["confirmpass"] = $_POST["confirmpass"];
 $_SESSION["email"] = $_POST["email"];
 $_SESSION["gender"] = $_POST["gender"];
 
-// header("location:/friends/views/users/register.php");
+header("location:/friends/views/users/register.php");
 
 // errors array
 $_SESSION["errors"] = [];
@@ -75,7 +77,7 @@ if (count($_SESSION['errors']) == 0)
         
         $uniqueName = uniqid();
         $imagePath = "/friends/assets/images/users_pics/".$uniqueName.".".$file_ext;
-        $imageDestination = $_SERVER['DOCUMENT_ROOT']."/friends/assets/images/users_pics/".$uniqueName.".".$file_ext;
+        $imageDestination = DOCUMENT_ROOT."friends/assets/images/users_pics/".$uniqueName.".".$file_ext;
         if(!move_uploaded_file($file_tmp,$imageDestination))
         {
             $_SESSION['errors']["imageError"] = "Sorry Couldn't save your image";

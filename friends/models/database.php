@@ -1,6 +1,10 @@
 <?php
 // include config
-require_once  ($_SERVER['DOCUMENT_ROOT']."/friends/config.php");
+if (!DOCUMENT_ROOT){
+    define("DOCUMENT_ROOT", "/var/www/html/");
+}
+
+require_once  (DOCUMENT_ROOT."/friends/config.php");
 class Database{
 
     private $dbh;

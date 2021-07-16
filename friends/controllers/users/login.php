@@ -17,6 +17,7 @@ if (!isset($_SESSION['invalidEmail']) && !isset($_SESSION['invalidPass']))
     if($currentUser)
     {
         $_SESSION['user_logged'] = true;
+        $_SESSION['id'] = $currentUser["id"];
         $_SESSION["username"] = ucfirst($currentUser["username"]);
         $_SESSION["gender"] = $currentUser["gender"];
         $_SESSION["email"] = $currentUser["email"];
