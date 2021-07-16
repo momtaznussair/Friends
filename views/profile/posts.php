@@ -10,11 +10,10 @@ include "../../config.php";
     <style>
         #f .form-control{
             border-radius: 10px;
-            background-color: lightskyblue;
+            background-color: darkslategrey;
             resize:none;
         }
         .row .post-content {
-            border: 1px solid red;
             /* height: 150px; */
         }
         .user_image .image{
@@ -26,7 +25,7 @@ include "../../config.php";
 
         .post-content{
             border-radius:20px;
-            background-color: lightcyan;
+            background-color: darkslategrey;
         }
         .post-content .post_img{
             width : 100%;
@@ -49,8 +48,8 @@ include "../../config.php";
                                 unset($_SESSION['empty']);
                             }
                         ?>
-                    <label class="btn btn-danger" id="upload_image_button">
-                        <input type="file" name="image" size="30">
+                    <label class="btn btn-dark" id="upload_image_button">
+                        <input type="file" name="image" size="30" id="add-img" class="text-warning">
                     </label>
                     <button class="btn btn-dark" id="btn-post" type="submit" name="submit">POST</button>
                 </form>
@@ -77,15 +76,26 @@ include "../../config.php";
                     <div class="post mb-5">
                         <div class="row post-header">
                             <div class="user_image col-2">
-                                <img class="image" src="<?php echo $_SESSION['image_link'] ?>">
-                                <span class="h5 text-primary"><?php echo $_SESSION['username'] ?></span>
+
+                                <?php
+                                    if(isset($_SESSION["image_link"])){
+                                        echo '<img class="image" src="';
+                                        echo $_SESSION['image_link'];
+                                        echo '" alt="Profile Picture" />';
+
+                                    }else{
+                                        echo ($_SESSION["gender"] == "male" ?  '<i class="fas fa-user text-light"></i>' : '<i class="fas fa-female" style="color:#E95771; font-size:1.5rem;" ></i>');
+                                    }
+                                ?>
+
+
+                                <span class="h5"><?php echo $_SESSION['username'] ?></span>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="post-content p-3 col-12">
+                            <div class="post-content text-light p-5 col-12">
                                 <p class="small fw-bold"><?php echo $post['created_at'] ?></p>
                                 <p class="fs-5 fw-bold post-body"><?php echo $post['body'] ; ?></p>
-                                <!-- <img class="post_img" src="<?php //echo $post['image_link'] ?>"> -->
 
                                 <?php
                                     if(isset($post["image_link"])){
@@ -93,8 +103,6 @@ include "../../config.php";
                                         echo $post['image_link'];
                                         echo '" alt="Profile Picture" />';
 
-                                    }else{
-                                        echo ($_SESSION["gender"] == "male" ?  '<i class="fas fa-user text-light"></i>' : '<i class="fas fa-female" style="color:#E95771; font-size:1.5rem;" ></i>');
                                     }
                                 ?>
 

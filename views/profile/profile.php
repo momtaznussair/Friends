@@ -2,7 +2,7 @@
 session_start();
 ?>
 
-
+<?php include "../../includes/navbar.php"; ?>
 <?php include "../../includes/head.php"; ?>
 <?php echo $_SESSION['id']?>
 

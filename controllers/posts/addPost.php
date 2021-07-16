@@ -19,7 +19,6 @@ if(isset($_POST['submit']))
     $body = htmlentities($body);
     $body = htmlspecialchars($body);
     $body = strip_tags($body);
-    $body = str_replace(' ','' , $body);
     $body = ucfirst(strtolower($body));
     $_SESSION['body'] = $body;
 

@@ -17,7 +17,7 @@ class getPostModel{
     
     public function get_posts(){
         // order by 1 desc limit :start_from , :per_page
-        $this->db->query("select * from post where user_id = :user_id ");
+        $this->db->query("select * from post where user_id = :user_id ORDER BY created_at DESC");
         $this->db->bind(':user_id' , $this->user_id);
         // $this->db->bind(':start_from' , $this->start_from);
         // $this->db->bind(':per_page' , $this->per_page);
