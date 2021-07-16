@@ -1,6 +1,5 @@
 <?php 
 
-include_once('../../includes/head.php');
 include "../../config.php";
 
 //$user_id = $_SESSION['id'];
@@ -75,7 +74,7 @@ include "../../config.php";
                 <?php foreach ($allPosts as $key => $post) { ?>
                     <div class="post mb-5">
                         <div class="row post-header">
-                            <div class="user_image col-2">
+                            <div class="user_image col-2 mb-2">
 
                                 <?php
                                     if(isset($_SESSION["image_link"])){
@@ -102,7 +101,6 @@ include "../../config.php";
                                         echo '<img class="post_img" src="';
                                         echo $post['image_link'];
                                         echo '" alt="Profile Picture" />';
-
                                     }
                                 ?>
 
