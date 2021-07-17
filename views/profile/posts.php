@@ -2,7 +2,6 @@
 
 include "../../config.php";
 
-//$user_id = $_SESSION['id'];
 ?>
 
 <head>
@@ -30,7 +29,6 @@ include "../../config.php";
 </head>
 
 <body>
-    <?php //include "../../includes/navbar.php"?>
     <div class="row mt-5">
         <div id="insert_posts" class="col-sm-12">
             <center>
