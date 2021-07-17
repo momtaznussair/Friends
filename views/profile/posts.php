@@ -12,14 +12,10 @@ include "../../config.php";
             background-color: darkslategrey;
             resize:none;
         }
-        .row .post-content {
-            /* height: 150px; */
-        }
         .user_image .image{
             border-radius: 50%;
             height:75px;
             width:75px;
-            /* background-color: yellow; */
         }
 
         .post-content{
@@ -63,12 +59,6 @@ include "../../config.php";
             
             <?php 
                 include_once('../../controllers/posts/getPost.php');
-                // if($allPosts){
-                //     var_dump($allPosts);
-                // }else{
-                //     echo "none";
-                // }
-                // var_dump($allPosts);
             ?>
             <div class="container">
                 <?php foreach ($allPosts as $key => $post) { ?>

@@ -24,7 +24,6 @@ if (!isset($_SESSION['invalidEmail']) && !isset($_SESSION['invalidPass']))
         $_SESSION["image_link"] = $currentUser["image_link"];
         $_SESSION["password"] = $_SESSION["password"];
         header("location:/friends");
-
     }
     else
     {
