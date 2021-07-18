@@ -1,5 +1,10 @@
 <?php
 // include config
+// if (!DOCUMENT_ROOT){
+//     define("DOCUMENT_ROOT", "xampp/htdocs"); // define document root
+// }
+require_once  ("/xampp/htdocs/friends/config.php");
+// require_once  (DOCUMENT_ROOT."/friends/config.php");
 if (!DOCUMENT_ROOT){
     define("DOCUMENT_ROOT", "/var/www/html/"); // define document root
 }

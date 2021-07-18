@@ -5,7 +5,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand ms-3" href="/friends">Home</a>
-    <a class="navbar-brand ms-5" href="/friends/views/users/profile.php">My Profile</a>
+    <a class="navbar-brand ms-5" href="/friends/views/profile/profile.php">My Profile</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

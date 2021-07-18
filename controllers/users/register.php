@@ -76,8 +76,8 @@ if (count($_SESSION['errors']) == 0)
     if (strlen($_FILES["image"]["name"]) !== 0){
         
         $uniqueName = uniqid();
-        $imagePath = "/friends/assets/images/users_pics/".$uniqueName.".".$file_ext;
-        $imageDestination = DOCUMENT_ROOT."friends/assets/images/users_pics/".$uniqueName.".".$file_ext;
+        $imagePath = "/friends/assets/images/users_pics".$uniqueName.".".$file_ext;
+        $imageDestination = DOCUMENT_ROOT."friends/assets/images/users_pics".$uniqueName.".".$file_ext;
         if(!move_uploaded_file($file_tmp,$imageDestination))
         {
             $_SESSION['errors']["imageError"] = "Sorry Couldn't save your image";
