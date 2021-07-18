@@ -1,7 +1,7 @@
 <?php 
 
-require_once (DOCUMENT_ROOT.'/friends/models/database.php');
-// require_once ('/xampp/htdocs/friends/models/database.php');
+// require_once (DOCUMENT_ROOT.'/friends/models/database.php');
+require_once ('/xampp/htdocs/friends/models/database.php');
 
     class friend{
         private $user_id;

@@ -1,7 +1,7 @@
 <?php
 // include config
 if (!DOCUMENT_ROOT){
-    define("DOCUMENT_ROOT", ""); // define document root
+    define("DOCUMENT_ROOT", "/var/www/html/"); // define document root
 }
 
 require_once  (DOCUMENT_ROOT."/friends/config.php");

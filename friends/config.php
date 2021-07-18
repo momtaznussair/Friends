@@ -8,5 +8,5 @@ define("DB_NAME", "friends");
 
 // defile base urls
 
-define("DOCUMENT_ROOT", "");
+define("DOCUMENT_ROOT", "/var/www/html/"); // you document root must starts and end with /
 

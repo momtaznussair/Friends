@@ -2,8 +2,8 @@
 
     // session_start();
     // require "../../models/users/login.php";
-    // require "/xampp/htdocs/friends/models/users/friend.php";
-    require DOCUMENT_ROOT."/friends/models/users/friend.php";
+    require "/xampp/htdocs/friends/models/users/friend.php";
+    // require DOCUMENT_ROOT."/friends/models/users/friend.php";
 
 
     $friend = new friend();
