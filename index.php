@@ -22,5 +22,6 @@
         <?php require "./includes/navbar.php"; ?>
     <!-- of navbar -->
     <!-- friends feed [posts - users to add as a friend] -->
+        <?php require "./includes/friendsBar.php" ?>
 </body>
 </html>
