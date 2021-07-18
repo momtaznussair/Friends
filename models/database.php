@@ -1,10 +1,18 @@
 <?php
 // include config
+<<<<<<< HEAD:models/database.php
 // if (!DOCUMENT_ROOT){
 //     define("DOCUMENT_ROOT", "xampp/htdocs"); // define document root
 // }
 require_once  ("/xampp/htdocs/friends/config.php");
 // require_once  (DOCUMENT_ROOT."/friends/config.php");
+=======
+if (!DOCUMENT_ROOT){
+    define("DOCUMENT_ROOT", "/var/www/html/"); // define document root
+}
+
+require_once  (DOCUMENT_ROOT."/friends/config.php");
+>>>>>>> f47640569b2d59a98961fdeb5a9a6aca0aaa27fd:friends/models/database.php
 class Database{
 
     private $dbh;
