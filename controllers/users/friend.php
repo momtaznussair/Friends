@@ -25,7 +25,7 @@
         // echo $fr_id;
         // echo $us_id;
         $friend->removeFriend($us_id,$fr_id);
-        header('location:/friends');
+        header('location:/friends/views/profile/profile.php');
         
     }
 
@@ -36,6 +36,6 @@
         $us_id = $_SESSION['id'];
         $fr_id = $_POST['fr_id'];
         $friend->addFriend($us_id,$fr_id);
-        header("location:/friends");
+        header("location:/friends/views/profile/profile.php");
     }
 ?>

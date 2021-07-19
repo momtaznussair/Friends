@@ -2,12 +2,12 @@
   require_once('../../models/database.php');
 ?>
 
-    <div class="mt-5 mx-5">
+    <div class="mx-5">
         <?php
           echo "<img src={$_SESSION['image_link']} style='width: 150px; border-radius: 50%;'>" ;
         ?>
     </div>
-  <div class="mt-5" style="background-color: #e6e6e6;border-radius: 5px;">
+  <div class="mt-5 bg-dark text-warning" style="border-radius: 5px;">
 		<?php
 		echo"
 			<center><h2><strong>About</strong></h2></center>
