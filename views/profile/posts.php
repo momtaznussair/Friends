@@ -1,8 +1,3 @@
-<?php 
-
-include "../../config.php";
-
-?>
 
 <head>
     <style>
@@ -80,7 +75,12 @@ include "../../config.php";
                             </div>
                         </div>
                         <div class="row">
+
                             <div class="post-content text-light p-5 col-12">
+                            <form action="../../controllers/posts/deletePost.php" method="post">
+                                    <input type="hidden" name="delete" value="<?php $post['id']?>">
+                                    <input type="button" name="deletePost" value="delete" class="btn btn-danger">
+                                </form>
                                 <p class="small fw-bold"><?php echo $post['created_at'] ?></p>
                                 <p class="fs-5 fw-bold post-body"><?php echo $post['body'] ; ?></p>
 
